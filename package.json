@@ -1,0 +1,22 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "Dynamically generate a readme file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewyu22/readme-generator.git"
+  },
+  "author": "Andrew Yu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewyu22/readme-generator/issues"
+  },
+  "homepage": "https://github.com/andrewyu22/readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}
