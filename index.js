@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
 const generateReadMe = require('./src/readme-template');
 // Prompt Users Questions
 const promptUser = () => {
@@ -31,82 +32,66 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'installation',
-            message: 'Provide a description of the project (Required)',
-            validate: description => {
-                if (description) {
-                    return true;
-                } else {
-                    console.log('Please enter a project description!');
-                    return false;
-                }
-            }
+            message: 'Installation (Required)',
         },
         {
             type: 'input',
             name: 'usage',
-            message: 'Provide a description of the project (Required)',
-            validate: description => {
-                if (description) {
-                    return true;
-                } else {
-                    console.log('Please enter a project description!');
-                    return false;
-                }
-            }
+            message: 'Usage (Required)',
+        },
+        {
+            type: 'input',
+            name: 'credit',
+            message: 'Credit (Required)',
         },
         {
             type: 'input',
             name: 'License',
-            message: 'Provide a description of the project (Required)',
-            validate: description => {
-                if (description) {
-                    return true;
-                } else {
-                    console.log('Please enter a project description!');
-                    return false;
-                }
-            }
+            message: 'Licenses (Required)',
         },
         {
             type: 'input',
             name: 'contribution',
-            message: 'Provide a description of the project (Required)',
-            validate: description => {
-                if (description) {
-                    return true;
-                } else {
-                    console.log('Please enter a project description!');
-                    return false;
-                }
-            }
+            message: 'Contribution (Required)',
         },
         {
             type: 'input',
             name: 'test',
-            message: 'Provide a description of the project (Required)',
+            message: 'Test (Required)',
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'What is your Github Username (Required)',
             validate: description => {
                 if (description) {
                     return true;
                 } else {
-                    console.log('Please enter a project description!');
+                    console.log('Please enter a Github Username!');
                     return false;
                 }
             }
         },
         {
             type: 'input',
-            name: 'questions',
-            message: 'Provide a description of the project (Required)',
+            name: 'email',
+            message: 'What is your email address (Required)',
             validate: description => {
                 if (description) {
                     return true;
                 } else {
-                    console.log('Please enter a project description!');
+                    console.log('Please enter a email address!');
                     return false;
                 }
             }
-        },
+        }
     ])
 }
 
-promptUser().then(answers => console.log(answers));
+promptUser()
+    .then(answers => { return generateReadMe(answers) })
+    .then(answers => {
+        fs.writeFile('./generated/README.md', answers, err => {
+            err ? console.log(err) : console.log("Generated ReadMe");
+        })
+    });
