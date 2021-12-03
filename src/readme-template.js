@@ -1,3 +1,26 @@
+// generate Installation Section
+const generateInstall = installData => {
+    if (!installData) {
+        return 'No Installation Required!'
+    }
+    return `${installData}`
+}
+
+// generate Contribution Section
+const generateContribution = contributionData => {
+    if (!contributionData) {
+        return 'No contribution information for this project!'
+    }
+    return `${contributionData}`
+}
+
+// generate test Section
+const generateTest = testData => {
+    if (!testData) {
+        return 'No test for this project!'
+    }
+    return `${contributionData}`
+}
 module.exports = template => {
     return `# ${template.title}
 
@@ -10,25 +33,20 @@ ${template.description}
 
 * [Installation](#installation)
 * [Usage](#usage)
-* [Credits](#Credits)
-* [License](#License)
-* [Contributing](#Contributing)
-* [Tests](#Tests)
-* [Questions](#Questions)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+
 ---
 ## Installation
 
-${template.installation}
+${generateInstall(template.installation)}
 
 ---
 ## Usage 
 
 ${template.usage}
-
----
-## Credits
-
-${template.credit}
 
 ---
 ## License
@@ -38,12 +56,12 @@ ${template.License}
 ---
 ## Contributing
 
-${template.contribution}
+${generateContribution(template.contribution)}
 
 ---
 ## Tests
 
-${template.test}
+${generateTest(template.test)}
 
 ---
 ## Questions

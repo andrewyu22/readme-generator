@@ -1,77 +1,47 @@
-# RUN BUDDY
+# Run Buddy
 
 ## Description 
 
-AN APPLICATION TO SIGN UP FOR GYM
+A sign website for the GYM
 
 ---
 ## Table of Contents 
 
-* [Installation](#Installation)
-* [Usage](#Usage)
-* [Credits](#Credits)
+* [Installation](#installation)
+* [Usage](#usage)
 * [License](#license)
-* [Contributing](#Contributing)
-* [Tests](#Tests)
-* [Questions](#Questions)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
 
 ---
 ## Installation
-Noneasdasdasd
 
-asdasd
-
-asdasdasd
-
-asdasdasd
-
-asdasd
+No installation required
 
 ---
 ## Usage 
 
-npm install
-
-Noneasdasdasd
-
-asdasd
-
-asdasdasd
-
-asdasdasd
-
-asdasd
-
----
-## Credits
-
-Andrew
+Used to sign up to get fit
 
 ---
 ## License
 
-None
-Noneasdasdasd
-
-asdasd
-
-asdasdasd
-
-asdasdasd
-
-asdasd
+No Licenses
 
 ---
 ## Contributing
 
-None
+No Contribution
 
+---
 ## Tests
 
-None
+No Test
 
+---
 ## Questions
 
 Link to Github: https://github.com/andrewyu22
 
-If you have any further questions, please contact me at test@gmail.com
+If you have any further questions, please contact me at andrewyu2654@gmail.com

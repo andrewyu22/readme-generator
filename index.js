@@ -1,6 +1,22 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateReadMe = require('./src/readme-template');
+
+const writeToFile = fileContent => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./generated/README.md', fileContent, err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+            resolve({
+                ok: true,
+                message: 'ReadMe Generated!'
+            });
+        });
+    });
+}
+
 // Prompt Users Questions
 const promptUser = () => {
     return inquirer.prompt([{
@@ -32,17 +48,20 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'installation',
-            message: 'Installation (Required)',
+            message: 'Please Enter an installation steps: ',
         },
         {
             type: 'input',
             name: 'usage',
-            message: 'Usage (Required)',
-        },
-        {
-            type: 'input',
-            name: 'credit',
-            message: 'Credit (Required)',
+            message: 'What is the Usage of this application? (Required)',
+            validate: usage => {
+                if (usage) {
+                    return true;
+                } else {
+                    console.log('Please Enter what this application is used for!');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
@@ -62,9 +81,9 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'github',
-            message: 'What is your Github Username (Required)',
-            validate: description => {
-                if (description) {
+            message: 'What is your Github Username? (Required)',
+            validate: github => {
+                if (github) {
                     return true;
                 } else {
                     console.log('Please enter a Github Username!');
@@ -75,9 +94,9 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'email',
-            message: 'What is your email address (Required)',
-            validate: description => {
-                if (description) {
+            message: 'What is your email address? (Required)',
+            validate: email => {
+                if (email) {
                     return true;
                 } else {
                     console.log('Please enter a email address!');
@@ -89,9 +108,9 @@ const promptUser = () => {
 }
 
 promptUser()
-    .then(answers => { return generateReadMe(answers) })
     .then(answers => {
-        fs.writeFile('./generated/README.md', answers, err => {
-            err ? console.log(err) : console.log("Generated ReadMe");
-        })
-    });
+        return generateReadMe(answers);
+    })
+    .then(fileData => {
+        return writeToFile(fileData);
+    })
