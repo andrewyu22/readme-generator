@@ -1,12 +1,12 @@
-# ReadMe Generator 
+# Run Buddy [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description 
 
-Quickly generate a professional README file by using command-line application.
+a website to allow users to sign up for a trainer
 
-Repo: https://github.com/andrewyu22/readme-generator
+Repo: https://github.com/andrewyu22/run-buddy
 
-Link: No link available for this project!
+Link: https://andrewyu22.github.io/run-buddy/
 
 ---
 ## Table of Contents 
@@ -26,12 +26,12 @@ npm install to install all dependency
 ---
 ## Usage 
 
-Prompt users a series of questions and generate an professional README file
+To get users to sign up today with a trainer
 
 ---
 ## License
 
-No Licenses for this project!
+[MIT](https://opensource.org/licenses/MIT)
 
 ---
 ## Contributing
