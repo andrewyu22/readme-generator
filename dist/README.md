@@ -1,8 +1,12 @@
-# Run Buddy
+# ReadMe Generator 
 
 ## Description 
 
-A sign website for the GYM
+Quickly generate a professional README file by using command-line application.
+
+Repo: https://github.com/andrewyu22/readme-generator
+
+Link: No link available for this project!
 
 ---
 ## Table of Contents 
@@ -17,27 +21,27 @@ A sign website for the GYM
 ---
 ## Installation
 
-No installation required
+npm install to install all dependency
 
 ---
 ## Usage 
 
-Used to sign up to get fit
+Prompt users a series of questions and generate an professional README file
 
 ---
 ## License
 
-No Licenses
+No Licenses for this project!
 
 ---
 ## Contributing
 
-No Contribution
+No contribution information for this project!
 
 ---
 ## Tests
 
-No Test
+No test for this project!
 
 ---
 ## Questions

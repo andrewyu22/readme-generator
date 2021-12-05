@@ -4,7 +4,7 @@ const generateReadMe = require('./src/readme-template');
 
 const writeToFile = fileContent => {
     return new Promise((resolve, reject) => {
-        fs.writeFile('./generated/README.md', fileContent, err => {
+        fs.writeFile('./dist/README.md', fileContent, err => {
             if (err) {
                 reject(err);
                 return;
@@ -49,6 +49,7 @@ const promptUser = () => {
             type: 'input',
             name: 'installation',
             message: 'Please Enter an installation steps: ',
+            default: 'No Installation Required!'
         },
         {
             type: 'input',
@@ -64,19 +65,22 @@ const promptUser = () => {
             }
         },
         {
-            type: 'input',
+            type: 'rawlist',
             name: 'License',
-            message: 'Licenses (Required)',
+            message: 'Select licenses that applies: ',
+            choices: ['None', 'MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3']
         },
         {
             type: 'input',
             name: 'contribution',
-            message: 'Contribution (Required)',
+            message: 'Enter a contribution information: ',
+            default: 'No contribution information for this project!'
         },
         {
             type: 'input',
             name: 'test',
-            message: 'Test (Required)',
+            message: 'Test',
+            default: 'No test for this project!'
         },
         {
             type: 'input',
@@ -90,6 +94,25 @@ const promptUser = () => {
                     return false;
                 }
             }
+        },
+        {
+            type: 'input',
+            name: 'repo',
+            message: 'What is your github Repo name? (Required)',
+            validate: repo => {
+                if (repo) {
+                    return true;
+                } else {
+                    console.log('Please enter a Github Repo name!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'link',
+            message: 'What is your github project link?',
+            default: 'No link available for this project!'
         },
         {
             type: 'input',
